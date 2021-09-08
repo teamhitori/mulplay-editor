@@ -1,0 +1,27 @@
+#renderCanvas {
+  //width: 75vw;
+  //height: 50vw;
+  //max-height: 60vh;
+  touch-action: none;
+  position: relative;
+  top: 0px;
+  bottom: 0px;
+  max-width: 100%;
+  margin: auto auto;
+  border: 1px solid white;
+}
+
+#renderCanvas.active {
+  //cursor: none;
+}
+
+
+
+.cavas-holder-inner {
+  padding: 16px;
+  margin: -16px -0px 0 -16px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: absolute;
+}

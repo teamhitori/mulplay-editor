@@ -1,0 +1,21 @@
+<h1 mat-dialog-title>New Game</h1>
+<div mat-dialog-content>
+  <mat-form-field appearance="outline" style="width: 100%;">
+    <mat-label>{{ openPrompt }}</mat-label>
+    <mat-select (selectionChange)="onChange($event)"[disabled]="gameNamesList.length == 0">
+      <mat-option *ngFor="let gameName of gameNamesList" [value]="gameName">
+        {{gameName}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-divider></mat-divider>
+  <p class="pt-2">Create New Game</p>
+  <mat-form-field appearance="outline" style="width: 100%;">
+    <mat-label>Game Name</mat-label>
+    <input matInput [(ngModel)]="newGameName">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button [mat-dialog-close]="newGameName" cdkFocusInitial>Create</button>
+</div>
+

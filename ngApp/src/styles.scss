@@ -1,0 +1,91 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '~@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$mulplay-editor-primary: mat.define-palette(mat.$indigo-palette);
+$mulplay-editor-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$mulplay-editor-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$mulplay-editor-theme: mat.define-dark-theme((
+  color: (
+    primary: $mulplay-editor-primary,
+    accent: $mulplay-editor-accent,
+    warn: $mulplay-editor-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($mulplay-editor-theme);
+
+/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+html, body { height: 100%; }
+
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+nav {
+  z-index: 2;
+
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -ms-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
+}
+
+nav.collapse-header {
+  height: 0px;
+  padding: 0px;
+}
+
+.navbar-img {
+  width: 30px;
+  border-radius: 50%;
+}
+
+@media(min-width: 960px) {
+   nav > .container {
+    padding: 0 170px 0;
+  }
+}
+
+nav > .container {
+  max-width: none !important;
+
+  opacity: 1;
+
+  -webkit-transition: opacity 0.1s ease-in-out;
+  -moz-transition: opacity 0.1s ease-in-out;
+  -ms-transition: opacity 0.1s ease-in-out;
+  -o-transition: opacity 0.1s ease-in-out;
+  transition: opacity 0.1s ease-in-out;
+}
+
+nav.collapse-header > .container {
+  opacity: 0;
+}
+
+
+.collapse-header {
+  height: 0px;
+  padding: 0px;
+}
+
+

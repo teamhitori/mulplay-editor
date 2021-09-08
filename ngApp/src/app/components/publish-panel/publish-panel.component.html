@@ -1,0 +1,12 @@
+<div class="container-fluid" *ngIf="isLoaded">
+  <div class="row p-2" *ngIf="!isPublished">
+    <div class="col-1">
+      <button mat-raised-button aria-label="Publish" color="primary" (click)="publish()">
+        <mat-icon>flash_on</mat-icon> Publish
+      </button>
+    </div>
+  </div>
+  <div class="row p-2" *ngIf="isPublished">
+    <h1><a href="{{publishedUrl}}" target="_blank" >{{publishedUrl}}</a></h1>
+  </div>
+</div>
